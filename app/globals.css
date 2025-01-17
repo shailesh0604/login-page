@@ -40,3 +40,113 @@ html.lenis body {
 .lenis.lenis-smooth iframe {
   pointer-events: none;
 }
+
+.input-search {
+  position: relative;
+  width: 100%;
+  height: 2.5rem;
+}
+
+.input-search input {
+  width: 100%;
+  cursor: pointer;
+}
+
+.input-search-container {
+  width: 16rem;
+  transition: all 0.35s ease;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.input-search-container.expand {
+  width: 22rem;
+  transition: all 0.35s ease;
+  max-width: 100%;
+}
+
+.input-search-container.expand .input-search input {
+  cursor: auto;
+}
+
+.input-search-container.expand .btn-close {
+  pointer-events: unset;
+  opacity: 1;
+  right: 5%;
+  transition: all 0.4s ease;
+}
+
+.search-result-container {
+  position: absolute;
+  top: 140%;
+  background: #4d4d4d;
+  width: 100%;
+  border-radius: 16px;
+  padding: 0.75rem;
+  display: none;
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.search-result-container.searched {
+  transition: all 1s ease;
+  display: block;
+  opacity: 1;
+}
+
+.user-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.username-title {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.125rem;
+}
+
+.username-title .user-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+.username-title .user-info {
+  font-size: 0.8rem;
+  text-wrap: balance;
+  font-weight: 300;
+}
+.btn-close {
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  pointer-events: none;
+  right: 10%;
+  transform: translate(0%, -50%);
+  transition: all 0.4s ease;
+}
+
+.user-profile {
+  width: 90px;
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 100px;
+}
+
+.user-profile img {
+  width: 55px;
+  height: 55px;
+  border-radius: 100px;
+  overflow: hidden;
+  object-fit: cover !important;
+}
+
+.rs-loader-spin:after {
+  border-color: #ffffff transparent transparent !important;
+}

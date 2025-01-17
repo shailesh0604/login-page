@@ -1,8 +1,24 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import connectDB from "@/db/connectDB";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 const page = () => {
+  const { data: session } = useSession();
+
+  //connectDB();
+
+  if (session) {
+    return (
+      <>
+        Signed in as{session.user.email} <br />
+        <button>sign out</button>
+      </>
+    );
+  }
   return (
     <>
       <section className="flex justify-center items-center w-full h-screen">
@@ -23,6 +39,7 @@ const page = () => {
           <div className="flex flex-col gap-4 ">
             <Link
               href={"/"}
+              onClick={() => signIn("github")}
               className="bg-white flex justify-center items-center gap-2 text-black px-2 py-2 rounded-[4px]"
             >
               <span>
@@ -59,6 +76,7 @@ const page = () => {
               <span>Continue with Facebook</span>
             </Link>
           </div>
+
           <div className="opacity-60 text-center my-2">or</div>
 
           <div className="flex flex-col gap-3">
